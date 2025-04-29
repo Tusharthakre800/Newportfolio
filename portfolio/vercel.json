@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "portfolio/pages/**/*.jsx",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "portfolio/src/**/*.css",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/portfolio/pages/$1"
+    }
+  ]
+}
+
