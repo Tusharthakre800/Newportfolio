@@ -12,8 +12,8 @@
   ],
   "routes": [
     {
-      "src": "/.(*)",
-      "dest": "/index.html"
+      "src": "portfolio/src/(.*)",
+      "dest": "portfolio/src/$1"
     }
   ]
 }
