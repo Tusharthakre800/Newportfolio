@@ -94,6 +94,11 @@ const videos = [
     url: "../Media/Videos/significo.mp4",
     thumbnail: "../Media/IMG/significo.png",
   },
+  {
+    title: "zanjo digital studio",
+    url: "../Media/Videos/zanjo.mp4",
+    thumbnail: "../Media/IMG/zanjo.png",
+  },
 ];
 
 const Projectvideos = () => {

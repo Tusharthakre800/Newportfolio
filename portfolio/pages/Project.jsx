@@ -10,7 +10,7 @@ const projectsData = [
   {
     title: "Sign post India Clone",
     description: "  This website was initially very boring, so I enhanced its user experience by adding engaging animations ,For thebest experience, please view it on a laptop" ,
-    tech: ["HTML", "CSS", "JS", "GSAP"],
+    tech: ["HTML", " Tailwind CSS", "JS", "GSAP"],
     link: "https://tusharthakre800.github.io/signpostindia/",
   },
   {
@@ -25,27 +25,33 @@ on a laptop.`,
   {
     title: "Hotel Website",
     description: `This website is designed to resemble a modern hotel website, with a strong focus on UI/UX. I’ve incorporated a wide range of smooth and engaging animations to elevate the overall user experience and create a visually appealing interface, with fully respnsive design.`,
-    tech: ["HTML", "CSS", "JS", "GSAP" , "lenis", "React"],
+    tech: ["HTML", " Tailwind CSS", "JS", "GSAP" , "lenis", "React"],
     link: "https://hotel-project-react.vercel.app/",
   },
   {
     title: "We Think Elastic clone",
     description: `It took me several days to clone this website, but I gradually completed it over 2-3 months. Now, I’m enhancing it using HTML,
         CSS, JavaScript, GSAP, Locomotive Scroll.js, and ScrollTrigger.min.js. For the best experience, please view it on a laptop , with fully respnsive design.`,
-    tech: ["HTML", "CSS", "JS", "GSAP"],
+    tech: ["HTML", " Tailwind CSS", "JS", "GSAP"],
     link: "https://we-think-elastic-seven.vercel.app/",
   },
   {
     title: "Cadbury Website",
     description: `I used GSAP and ScrollTrigger in this website to provide users with a smooth and engaging experience. This was my second project, so the UI/UX might not be perfect, but I always make sure to say that every website I create is designed to give users the best possible experience.`,
-    tech: ["HTML", "CSS", "JS", "GSAP"],
+    tech: ["HTML", " Tailwind CSS", "JS", "GSAP"],
     link: `https://tusharthakre800.github.io/cadbury/`,
   },
   {
     title: "Significo Website",
     description: `The idea for creating this website came entirely from Significo. Their website showed me how powerful GSAP ScrollTrigger can be and the different ways it can be used. Although the website isn’t as responsive as I’d like it to be, I learned a lot while building it. Big thanks to Significo`,
-    tech: ["HTML", "CSS", "JS", "GSAP"],
+    tech: ["HTML", "Tailwind CSS", "JS", "GSAP"],
     link: "https://tusharthakre800.github.io/animation/",
+  },
+  {
+    title: "Zanjo digital studio",
+    description: `This website is inspired by the concept of Zajno Digital Studio. It utilizes Three.js to create a visually stunning animation effect using pixels that transform the image in a creative way. The site is not responsive by design, as the full user experience and expressions are meant to be appreciated exclusively on desktop`,
+    tech: ["HTML", "Tailwind CSS", "JS", "GSAP" ,"lenis", "Three.js"],
+    link: "https://zanjo.vercel.app/",
   },
 ];
 
