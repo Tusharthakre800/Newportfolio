@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="" href="./download.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tushar Dev - Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      html, body, #root {
+        background: linear-gradient(to bottom, #0f172a, #1e293b, #0f172a);
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+    </style>
+    <script type="text/javascript">
+      (function (location) {
+        if (location.search[1] === "/") {
+          const decoded = location.search
+            .slice(1)
+            .split("&")
+            .map(s => s.replace(/~and~/g, "&"))
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            location.pathname.slice(0, -1) + decoded + location.hash
+          );
+        }
+      })(window.location);
+    </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
