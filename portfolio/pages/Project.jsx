@@ -64,7 +64,7 @@ const Projects = () => {
     // Fade-in for container
     gsap.from(containerRef.current, {
       y: 40,
-      duration: 1,
+      duration: 0.2,
       ease: "power2.out",
     });
 
@@ -76,7 +76,7 @@ const Projects = () => {
         opacity: 1,
         y: Math.floor(Math.random() * 28 - 10),
         x: Math.floor(Math.random() * 28 - 10),
-        duration: 0.5,
+        duration: 0.2,
         ease: "power2.out",
         scrollTrigger: {
           trigger: card,
@@ -167,7 +167,7 @@ const Projects = () => {
           }
           .animate-float-delay {
             animation: float 22s ease-in-out infinite;
-            animation-delay: 2s;
+            animation-delay: 0.2s;
           }
           @keyframes shine-tw {
             0% { left: -75%; }
