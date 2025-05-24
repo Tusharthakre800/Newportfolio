@@ -245,7 +245,7 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            <li ref={el => mobileLinksRef.current[4] = el}>
+            {/* <li ref={el => mobileLinksRef.current[4] = el}>
               <NavLink
                 to="/project-videos"
                 className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
@@ -256,7 +256,7 @@ const Navbar = () => {
               >
                 Projects video
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       )}
