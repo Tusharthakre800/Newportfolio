@@ -167,7 +167,7 @@ const Projects = () => {
           }
           .animate-float-delay {
             animation: float 22s ease-in-out infinite;
-            animation-delay: 0.2s;
+            animation-delay: 0.3s;
           }
           @keyframes shine-tw {
             0% { left: -75%; }

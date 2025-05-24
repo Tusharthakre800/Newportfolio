@@ -4,5 +4,10 @@
           "source": "/(.*)",
           "destination": "/index.html"
         }
-      ]
+      ],
+      "github": {
+        "silent": true,
+        "autoAlias": true
+        
+      }
     }
