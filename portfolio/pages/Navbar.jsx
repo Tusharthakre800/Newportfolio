@@ -149,15 +149,15 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
-            {/* <li className="nav-link">
+            <li className="nav-link">
               <NavLink
                 to="/project-videos"
                 className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
                 onClick={(e) => handleNavigation(e, '/project-videos')}
               >
-                Projects video
+                videos
               </NavLink>
-            </li> */}
+            </li>
           </ul>
 
           {/* Mobile menu button */}
