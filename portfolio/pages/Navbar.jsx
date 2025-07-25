@@ -155,7 +155,7 @@ const Navbar = () => {
                 className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
                 onClick={(e) => handleNavigation(e, '/project-videos')}
               >
-                videos
+                project videos
               </NavLink>
             </li>
           </ul>
