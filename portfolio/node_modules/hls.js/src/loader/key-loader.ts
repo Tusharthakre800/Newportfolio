@@ -1,10 +1,14 @@
 import { LoadError } from './fragment-loader';
 import { ErrorDetails, ErrorTypes } from '../errors';
-import type { HlsConfig } from '../config';
+import { type Fragment, isMediaFragment } from '../loader/fragment';
+import {
+  getKeySystemsForConfig,
+  keySystemFormatToKeySystemDomain,
+} from '../utils/mediakeys-helper';
 import type { LevelKey } from './level-key';
+import type { HlsConfig } from '../config';
 import type EMEController from '../controller/eme-controller';
 import type { MediaKeySessionContext } from '../controller/eme-controller';
-import type { Fragment } from '../loader/fragment';
 import type { ComponentAPI } from '../types/component-api';
 import type { KeyLoadedData } from '../types/events';
 import type {
@@ -90,25 +94,49 @@ export default class KeyLoader implements ComponentAPI {
   loadClear(
     loadingFrag: Fragment,
     encryptedFragments: Fragment[],
-  ): void | Promise<void> {
-    if (this.emeController && this.config.emeEnabled) {
-      // access key-system with nearest key on start (loaidng frag is unencrypted)
-      const { sn, cc } = loadingFrag;
-      for (let i = 0; i < encryptedFragments.length; i++) {
-        const frag = encryptedFragments[i];
-        if (
-          cc <= frag.cc &&
-          (sn === 'initSegment' || frag.sn === 'initSegment' || sn < frag.sn)
-        ) {
-          this.emeController
-            .selectKeySystemFormat(frag)
-            .then((keySystemFormat) => {
-              frag.setKeyFormat(keySystemFormat);
-            });
-          break;
+    startFragRequested: boolean,
+  ): null | Promise<void> {
+    if (
+      this.emeController &&
+      this.config.emeEnabled &&
+      !this.emeController.getSelectedKeySystemFormats().length
+    ) {
+      // Access key-system with nearest key on start (loading frag is unencrypted)
+      if (encryptedFragments.length) {
+        for (let i = 0, l = encryptedFragments.length; i < l; i++) {
+          const frag = encryptedFragments[i];
+          // Loading at or before segment with EXT-X-KEY, or first frag loading and last EXT-X-KEY
+          if (
+            (loadingFrag.cc <= frag.cc &&
+              (!isMediaFragment(loadingFrag) ||
+                !isMediaFragment(frag) ||
+                loadingFrag.sn < frag.sn)) ||
+            (!startFragRequested && i == l - 1)
+          ) {
+            return this.emeController
+              .selectKeySystemFormat(frag)
+              .then((keySystemFormat) => {
+                if (!this.emeController) {
+                  return;
+                }
+                frag.setKeyFormat(keySystemFormat);
+                const keySystem =
+                  keySystemFormatToKeySystemDomain(keySystemFormat);
+                if (keySystem) {
+                  return this.emeController.getKeySystemAccess([keySystem]);
+                }
+              });
+          }
+        }
+      }
+      if (this.config.requireKeySystemAccessOnStart) {
+        const keySystemsInConfig = getKeySystemsForConfig(this.config);
+        if (keySystemsInConfig.length) {
+          return this.emeController.getKeySystemAccess(keySystemsInConfig);
         }
       }
     }
+    return null;
   }
 
   load(frag: Fragment): Promise<KeyLoadedData> {
