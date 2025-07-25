@@ -93,7 +93,7 @@ function ProjectVideoCard({ title, video, thumbnail, onWatch, onDownload, onShar
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
           <span className="text-lg font-semibold text-white drop-shadow-lg">{title}</span>
         </div>
-        <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={onWatch}
             className="cursor-pointer bg-blue-500/80 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded shadow-lg font-semibold mb-1"
@@ -138,7 +138,7 @@ function ProjectVideos() {
     document.body.removeChild(link);
   };
 
-  const handleShare = (video, title) => {
+  const handleShare = (video) => {
     const url = window.location.origin + video;
     if (navigator.clipboard) {
       navigator.clipboard.writeText(url);
