@@ -140,7 +140,7 @@ const Navbar = () => {
                 Projects
               </NavLink>
             </li>
-            {/* <li className="nav-link">
+            <li className="nav-link">
               <NavLink
                 to="/contact"
                 className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
@@ -148,7 +148,7 @@ const Navbar = () => {
               >
                 Contact
               </NavLink>
-            </li> */}
+            </li>
             <li className="nav-link">
               <NavLink
                 to="/project-videos"
@@ -234,7 +234,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li ref={el => mobileLinksRef.current[3] = el}>
-              {/* <NavLink
+              <NavLink
                 to="/contact"
                 className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
                 onClick={(e) => {
@@ -243,7 +243,7 @@ const Navbar = () => {
                 }}
               >
                 Contact
-              </NavLink> */}
+              </NavLink>
             </li>
             <li ref={el => mobileLinksRef.current[4] = el}>
               <NavLink
