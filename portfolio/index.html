@@ -21,7 +21,7 @@
           const decoded = location.search
             .slice(1)
             .split("&")
-            .map(s => s.replace(/~and~/g, "&"))
+            .map(s => s.replace(/and/g, "&"))
             .join("?");
           window.history.replaceState(
             null,
@@ -38,4 +38,3 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
