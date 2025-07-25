@@ -1,18 +1,13 @@
-{
-  "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "rewrites": [
+        {
+          "source": "/(.*)",
+          "destination": "/index.html"
+        }
+      ],
+      "github": {
+        "silent": true,
+        "autoAlias": true
+        
+      }
     }
-  ],
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "github": {
-    "silent": true,
-    "autoAlias": true
-  }
-}
