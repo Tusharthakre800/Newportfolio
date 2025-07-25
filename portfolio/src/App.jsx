@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "../pages/About";
 import Project from "../pages/Project";
 import Contact from "../pages/Contact";
-import Projects from "../pages/Project";
+import ProjectVideos from "../pages/Projectvideos";
 import Footer from "../pages/Footer";
 import CubeLoader from "../pages/CubeLoader";
 import Customcursor from "../pages/Customcursor";
@@ -30,7 +30,7 @@ function App() {
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/error" element={<Error404 />} />
-          <Route path="/project-videos" element={<Projects />} />
+          <Route path="/project-videos" element={<ProjectVideos />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
