@@ -91,7 +91,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#0f172a] via-[#181e2a] to-[#0f172a] text-white relative mb-10 pt-16">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#0f172a] via-[#181e2a] to-[#0f172a] text-white relative mb-1  ">
       {/* Animated floating gradient background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-[120px] animate-float"></div>
