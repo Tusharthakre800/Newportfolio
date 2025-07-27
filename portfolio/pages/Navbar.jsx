@@ -183,7 +183,7 @@ const Navbar = () => {
       {isOpen && (
         <div
           ref={mobileMenuRef}
-          className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-md z-40 flex items-center justify-center"
+          className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-md z-40 flex items-center justify-center overflow-y-auto max-h-screen"
           style={{ opacity: 0 }} // initial opacity for animation
         >
           {/* Close icon in mobile menu */}

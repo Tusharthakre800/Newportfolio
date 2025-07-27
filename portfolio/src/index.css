@@ -2,6 +2,11 @@
 html, body, #root {
   background: linear-gradient(to bottom, #0f172a, #1e293b, #0f172a);
   min-height: 100vh;
+  /* height: 100%; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+  /* scroll-behavior: smooth; */
   margin: 0;
   padding: 0;
   /* color: white; */

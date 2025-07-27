@@ -176,7 +176,7 @@ function ProjectVideos() {
   }, [modal.open, showModal]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#181e2a] to-[#232946] text-white py-10 px-2 mb-10 pt-20 ">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-[#0f172a] via-[#181e2a] to-[#232946] text-white py-10 px-2 mb-10 pt-20" style={{ WebkitOverflowScrolling: 'touch', touchAction: 'auto' }}>
       <h1 className="text-4xl md:text-6xl font-extrabold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-2xl tracking-tight">
         Project Videos
       </h1>
@@ -196,10 +196,19 @@ function ProjectVideos() {
       {/* Modal for watching video */}
       {showModal && typeof window !== 'undefined' &&
         createPortal(
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 overflow-y-auto"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'auto',
+              overscrollBehavior: 'contain',
+              maxHeight: '100vh',
+            }}
+          >
             <div
               ref={modalRef}
-              className="bg-[#181e2a] rounded-2xl shadow-2xl p-6 max-w-2xl w-full relative flex flex-col items-center"
+              className="bg-[#181e2a] rounded-2xl shadow-2xl p-6 max-w-2xl w-full relative flex flex-col items-center overflow-y-auto"
+              style={{ maxHeight: '80vh', WebkitOverflowScrolling: 'touch', touchAction: 'auto' }}
             >
               <button
                 className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 rounded-full px-3 py-1 text-sm font-bold shadow-lg cursor-pointer"
