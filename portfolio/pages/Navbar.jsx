@@ -158,6 +158,15 @@ const Navbar = () => {
                 project videos
               </NavLink>
             </li>
+            <li className="nav-link">
+              <NavLink
+                to="/chatbot"
+                className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
+                onClick={(e) => handleNavigation(e, '/chatbot')}
+              >
+                ChatBot
+              </NavLink>
+            </li>
           </ul>
 
           {/* Mobile menu button */}
@@ -255,6 +264,18 @@ const Navbar = () => {
                 }}
               >
                 Projects video
+              </NavLink>
+            </li>
+            <li ref={el => mobileLinksRef.current[4] = el}>
+              <NavLink
+                to="/chatbot"
+                className={({ isActive }) => isActive ? 'text-blue-400' : 'text-white hover:text-blue-400 transition-colors'}
+                onClick={(e) => {
+                  handleCloseMenu();
+                  handleNavigation(e, '/chatbot');
+                }}
+              >
+                ChatBot
               </NavLink>
             </li>
           </ul>

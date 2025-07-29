@@ -13,6 +13,7 @@ import Scrollprogress from "../pages/component/Scrollprogress";
 import PageTransition from "../pages/component/PageTransition";
 import Error404 from "../pages/Error404";
 import { useState } from "react";
+import ChatBot from "../pages/ChatBot"; // Importing ChatBot component
 
 function App() {
   // Always show loader on page refresh
@@ -31,6 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/error" element={<Error404 />} />
           <Route path="/project-videos" element={<ProjectVideos />} />
+          <Route path="/chatbot" element={<ChatBot />} /> {/* Adding ChatBot route */}
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
