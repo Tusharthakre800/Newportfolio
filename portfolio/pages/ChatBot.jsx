@@ -173,7 +173,7 @@ const ChatBot = () => {
               <div className="flex items-end ml-2">
                 {msg.role === "user" && editIdx !== idx && (
                   <button
-                    className="hidden group-hover:inline-flex text-lg  #848484  bg-transparent px-2 py-1 rounded transition cursor-pointer"
+                    className="inline-flex text-lg  #848484  bg-transparent px-2 py-1 rounded transition cursor-pointer"
                     onClick={() => handleEdit(idx, msg.content)}
                     title="Edit message"
                     aria-label="Edit message"
@@ -195,7 +195,7 @@ const ChatBot = () => {
                           </span>
                         ) : (
                           <button
-                            className="hidden group-hover:inline-flex text-lg #848484 bg-transparent px-2 py-1 rounded transition cursor-pointer"
+                            className="inline-flex text-lg #848484 bg-transparent px-2 py-1 rounded transition cursor-pointer"
                             onClick={() => handleCopy(msg.content, idx)}
                             title="Copy response"
                             aria-label="Copy response"
