@@ -9,7 +9,7 @@ const AdminFeedback = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/feedback");
+      const res = await axios.get("https://api.tusharwebdev.online/api/feedback");
       setFeedbacks(res.data);
     } catch (err) {
       console.error("Fetch error:", err);
@@ -19,7 +19,7 @@ const AdminFeedback = () => {
   const deleteFeedback = async (id) => {
     if (!token) return;
     try {
-      await axios.delete(`http://localhost:5000/api/feedback/${id}`, {
+      await axios.delete(`https://api.tusharwebdev.online/api/feedback/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
