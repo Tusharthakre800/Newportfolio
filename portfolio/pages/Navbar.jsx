@@ -62,6 +62,19 @@ const Navbar = () => {
         ease: "power2.out",
       }, "-=0.3");
 
+      // Apply animation to all nav links
+      navLinksRef.current.forEach((link) => {
+        gsap.fromTo(link, {
+          opacity: 0,
+          y: -10,
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      });
+
       setAnimated(true);
     }
   }, [animated]);
