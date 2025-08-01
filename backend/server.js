@@ -10,8 +10,8 @@ const app = express();
 app.use(cors(
   {
     origin: "https://www.tusharwebdev.online",
-    methods: ["GET","POST","PUT","DELETE"],
-    allowedHeaders: ["Content-Type","Authorization"]
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true
   }
 ));
 app.use(express.json());
