@@ -9,7 +9,8 @@ const AdminFeedback = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE}/api/feedback`);
+      // const res = await axios.get(`${import.meta.env.VITE_API_BASE}/api/feedback`);
+      const res = await axios.get(`https://www.tusharwebdev.online/api/feedback`);
       setFeedbacks(res.data);
     } catch (err) {
       console.error("Fetch error:", err);
@@ -19,8 +20,8 @@ const AdminFeedback = () => {
   const deleteFeedback = async (id) => {
     if (!token) return;
     try {
-      await axios.delete(`${import.meta.env.VITE_API_BASE}/api/feedback/${id}`, {
-      // await axios.delete(`http://localhost:500/api/feedback/${id}`, {
+      // await axios.delete(`${import.meta.env.VITE_API_BASE}/api/feedback/${id}`, {
+      await axios.delete(`https://www.tusharwebdev.online/api/feedback/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

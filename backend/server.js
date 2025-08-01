@@ -4,25 +4,35 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-
-
 const app = express();
 
-const corsOptions = {
-  origin: "https://www.tusharwebdev.online",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true
-};
-app.use(cors(corsOptions));
+const allowedOrigins = ["https://www.tusharwebdev.online"];
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.setHeader("Access-Control-Allow-Credentials", true);
-    next();
-  }
+const corsOptions = {
+  origin: `https://www.tusharwebdev.online`, // Update with your frontend URL
+  optionsSuccessStatus: 200,
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+};
+// app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests from Postman or curl where origin might be undefined
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS policy: origin not allowed"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
 );
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const feedbackRoutes = require("./routes/feedbackRoutes");

@@ -7,8 +7,8 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
   const handleLike = async (id) => {
     setLikeAnimating((prev) => ({ ...prev, [id]: true }));
     try {
-      await axios.patch(`${import.meta.env.VITE_API_BASE}/api/feedback/like/${id}`);
-      // await axios.patch(`http://localhost:5000/api/feedback/like/${id}`);
+      // await axios.patch(`${import.meta.env.VITE_API_BASE}/api/feedback/like/${id}`);
+      await axios.patch(`https://www.tusharwebdev.online/api/feedback/like/${id}`);
       fetchFeedbacks();
     } catch (err) {
       console.error("Like error:", err);
