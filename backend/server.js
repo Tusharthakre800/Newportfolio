@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173"  || "https://tusharwebdev.online", // Update with your frontend URL
+  origin: process.env.VITE_API_BASE, // Update with your frontend URL
   optionsSuccessStatus: 200,
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
