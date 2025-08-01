@@ -11,8 +11,8 @@ const FeedbackForm = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchFeedbacks = async () => {
-    // const res = await axios.get(`${import.meta.env.VITE_API_BASE}/feedback`);
-    const res = await axios.get(`https://tusharwebdev.online/api/feedback`);
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE}/api/feedback`);
+    // const res = await axios.get(`https://tusharwebdev.online/api/feedback`);
     setFeedbacks(res.data);
   };
 
@@ -25,7 +25,7 @@ const FeedbackForm = () => {
     setLoading(true);
     try {
       // await axios.post(`https://www.tusharwebdev.online/api/feedback`, { name, message });
-      await axios.post(`http://tusharwebdev.online/api/feedback`, { name, message });
+      await axios.post(`${import.meta.env.VITE_API_BASE}/api/feedback`, { name, message });
       setName("");
       setMessage("");
       setSuccess(true);
