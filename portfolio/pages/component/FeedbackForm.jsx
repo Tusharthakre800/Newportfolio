@@ -12,7 +12,7 @@ const FeedbackForm = () => {
 
   const fetchFeedbacks = async () => {
     // const res = await axios.get(`${import.meta.env.VITE_API_BASE}/feedback`);
-    const res = await axios.get(`https://www.tusharwebdev.online/api/feedback`);
+    const res = await axios.get(`https://tusharwebdev.online/api/feedback`);
     setFeedbacks(res.data);
   };
 
