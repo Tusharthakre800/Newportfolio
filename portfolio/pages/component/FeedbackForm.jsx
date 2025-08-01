@@ -11,7 +11,7 @@ const FeedbackForm = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchFeedbacks = async () => {
-    const res = await axios.get("http://localhost:5000/api/feedback");
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE}/api/feedback`);
     setFeedbacks(res.data);
   };
 
@@ -23,7 +23,8 @@ const FeedbackForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/feedback", { name, message });
+      await axios.post(`${import.meta.env.VITE_API_BASE}/api/feedback`, { name, message });
+      // await axios.post("http://localhost:5000/api/feedback", { name, message });
       setName("");
       setMessage("");
       setSuccess(true);
