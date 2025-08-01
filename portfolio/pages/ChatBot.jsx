@@ -238,6 +238,7 @@ const ChatBot = () => {
             className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-6 py-2 rounded-2xl font-bold shadow-md hover:from-blue-600 hover:to-pink-600 transition-all duration-200 transform hover:scale-105 active:scale-95 disabled:opacity-60"
             onClick={() => sendMessage()}
             disabled={loading || editIdx !== null}
+            
           >
             <span className="inline-block align-middle transition-transform duration-200">Send</span>
           </button>
