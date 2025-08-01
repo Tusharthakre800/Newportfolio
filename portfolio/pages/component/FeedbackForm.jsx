@@ -24,7 +24,7 @@ const FeedbackForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${import.meta.env.VITE_API_BASE}/feedback`, { name, message });
+      await axios.post(`${import.meta.env.VITE_API_BASE}api/feedback`, { name, message });
       // await axios.post("http://localhost:5000/api/feedback", { name, message });
       setName("");
       setMessage("");
