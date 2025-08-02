@@ -9,6 +9,7 @@ require("dotenv").config();
 const app = express();
 
 const corsOptions = {
+  
   origin: process.env.VITE_API_BASE, // Update with your frontend URL
   optionsSuccessStatus: 200,
   credentials: true,
