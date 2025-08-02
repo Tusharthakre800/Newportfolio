@@ -31,6 +31,9 @@ mongoose.connect(
 
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Welcome to the Feedback API");
+});
 app.use("/api/feedback", feedbackRoutes);
 app.use("/admin-auth", authenticateAdmin);
 
