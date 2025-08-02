@@ -11,12 +11,13 @@ const app = express();
 const corsOptions = {
   origin: process.env.VITE_API_BASE, 
   // Update with your frontend URL
-  
+
   optionsSuccessStatus: 200,
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
 };
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Enable pre-flight requests for all routes 
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
