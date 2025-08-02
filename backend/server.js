@@ -30,6 +30,7 @@ mongoose.connect(
   .catch((err) => console.error(err));
 
 
+// Routes
 app.use("/api/feedback", feedbackRoutes);
 app.use("/admin-auth", authenticateAdmin);
 
