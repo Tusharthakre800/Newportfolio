@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer
     //   ref={footerRef} 
-      className="bg-[#1e293b] w-full h-20 text-white  md:px-20 flex flex-col bottom-0 right-0  fixed md:flex-row justify-between items-center gap-4 border-t border-blue-400 z-100000"
+      className="bg-[#1e293b] w-full h-25 md:h-25 text-white  md:px-20 flex flex-col bottom-0 right-0  fixed md:flex-row justify-between items-center gap-4 border-t border-blue-400 z-100000"
     >
       <h3 className="text-lg font-semibold">© 2025 Tushar Thakre</h3>
 
@@ -46,7 +46,7 @@ const Footer = () => {
           }
         `}
       </style>
-      <div className="flex gap-4 text-blue-400">
+      <div className="flex gap-4 text-blue-400 ">
         <a href="https://www.linkedin.com/in/tusharthakre/" target="_blank" rel="noreferrer" className="navlink-hover">
           LinkedIn
         </a>

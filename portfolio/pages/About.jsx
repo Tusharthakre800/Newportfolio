@@ -485,16 +485,25 @@ const About = () => {
           <div className="rounded-3xl overflow-hidden relative hover:shadow-2xl transition-shadow duration-500 bg-[#1C2435]">
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/30 to-teal-600/30 backdrop-blur-sm -z-10"></div>
 
-            <div className="p-8 md:p-12 text-center">
+            <div className="p-8 md:p-12 text-center gap-6">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
               <p className="text-gray-300 max-w-2xl mx-auto mb-8">
               Have a project in mind or looking to explore potential opportunities? I’m always open to exciting new challenges and meaningful collaborations that inspire growth and innovation.              </p>
-              <NavLink
+              <div className="flex flex-col md:flex-row justify-center gap-4">
+                <NavLink
                 to="/contact"
                 className="inline-block px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full font-medium hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-105 transform"
               >
                 Get in Touch
               </NavLink>
+              <a
+                href="/tushar.pdf"
+                download="tushar resume 1.pdf"
+                className=" inline-block px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full font-medium hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 hover:scale-105 transform"
+              >
+                Download Resume
+              </a>
+              </div>
             </div>
           </div>
         </div>
