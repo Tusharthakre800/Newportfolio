@@ -1,6 +1,7 @@
 // src/components/ChatBot.jsx
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import Footer from "./Footer";
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([]);
@@ -265,7 +266,9 @@ const ChatBot = () => {
           40% { transform: scale(1.2); opacity: 1; }
         }
       `}</style>
+      <Footer />
     </div>
+
   );
 };
 

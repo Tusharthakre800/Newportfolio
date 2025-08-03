@@ -38,6 +38,7 @@ const projectVideos = [
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
+import Footer from "./Footer";
 
 function ProjectVideoCard({ title, video, thumbnail, onWatch, onDownload, onShare, index }) {
   const cardRef = useRef(null);
@@ -229,6 +230,7 @@ function ProjectVideos() {
           document.body
         )
       }
+      <Footer/>
     </div>
   );
 }
