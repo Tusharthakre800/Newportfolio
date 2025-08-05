@@ -5,12 +5,9 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
   const [likeAnimating, setLikeAnimating] = useState({});
   const [loadingFeedbacks, setLoadingFeedbacks] = useState(false);
 
- 
-
   useEffect(() => {
-  setLoadingFeedbacks(false); // just to initialize
-}, []);
-
+    setLoadingFeedbacks(false); // just to initialize
+  }, []);
 
   const handleLike = async (id) => {
     setLikeAnimating((prev) => ({ ...prev, [id]: true }));
@@ -34,7 +31,7 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
         skeletonArray.map((_, idx) => (
           <div
             key={idx}
-            className="w-full h-48 bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-5 shadow animate-pulse flex flex-col justify-between"
+            className="w-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-5 shadow animate-pulse flex flex-col justify-between"
           >
             <div className="w-1/3 h-4 bg-gray-700 rounded mb-2" />
             <div className="w-1/2 h-4 bg-gray-700 rounded mb-2" />
@@ -48,7 +45,7 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
         feedbacks.map((fb) => (
           <div
             key={fb._id}
-            className="w-full h-full bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white rounded-2xl p-5 shadow-md relative"
+            className="w-full bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white rounded-2xl p-5 shadow-md relative"
           >
             <p className="text-sm text-gray-400 mb-2">{new Date(fb.createdAt).toDateString()}</p>
 
@@ -61,7 +58,9 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
               </h3>
             </div>
 
-            <p className="text-sm text-gray-300 mb-4 line-clamp-3 break-words overflow-hidden">{fb.message}</p>
+            <p className="text-sm text-gray-300 mb-4 break-words whitespace-pre-wrap">
+              {fb.message}
+            </p>
 
             <button
               onClick={() => handleLike(fb._id)}
@@ -92,3 +91,4 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
 };
 
 export default FeedbackDisplay;
+
