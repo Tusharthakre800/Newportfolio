@@ -50,7 +50,6 @@ const FeedbackForm = () => {
       <div className="w-full max-w-2xl px-4 py-20">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-lg tracking-tight">
           <span className="inline-flex items-center gap-2">
-            <span className="animate-float-emoji text-3xl md:text-4xl">💬</span>
             Share Your Feedback
           </span>
         </h2>
