@@ -5,12 +5,11 @@ import AdminLogin from "./AdminLogin";
 const AdminFeedback = () => {
   const [token, setToken] = useState(localStorage.getItem("admin_token") || "");
   const [feedbacks, setFeedbacks] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(""); 
 
   const fetchFeedbacks = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_API_BASE}/api/feedback`);
-      // const res = await axios.get(`https://www.tusharwebdev.online/api/feedback`);
       setFeedbacks(res.data);
     } catch (err) {
       console.error("Fetch error:", err);
@@ -21,7 +20,6 @@ const AdminFeedback = () => {
     if (!token) return;
     try {
       await axios.delete(`${import.meta.env.VITE_API_BASE}/api/feedback/${id}`, {
-      // await axios.delete(`https://www.tusharwebdev.online/api/feedback/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -50,7 +48,7 @@ const AdminFeedback = () => {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#0f172a] via-[#181e2a] to-[#0f172a] text-white relative">
-      {/* Animated floating gradient background */}
+      {/* Floating Background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60vw] h-[60vw] bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-[120px] animate-float"></div>
         <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-gradient-to-tr from-pink-500/20 to-blue-500/20 rounded-full blur-[100px] animate-float-delay"></div>
@@ -81,7 +79,7 @@ const AdminFeedback = () => {
           />
         </div>
 
-        <div className="w-full h-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <div className="w-full h-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {filteredFeedbacks.length === 0 && (
             <p className="text-center text-gray-400 col-span-full">No feedbacks found.</p>
           )}
@@ -89,27 +87,23 @@ const AdminFeedback = () => {
           {filteredFeedbacks.map((fb) => (
             <div
               key={fb._id}
-              className="w-full h-54 bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white rounded-2xl p-5 shadow-md relative"
+              className="w-full bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white rounded-2xl p-5 shadow-md relative"
             >
               {/* Date */}
               <p className="text-sm text-gray-400 mb-2">{new Date(fb.createdAt).toDateString()}</p>
 
-              {/* Name with Icon */}
+              {/* Name */}
               <div className="flex items-center mb-2">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 text-white flex items-center justify-center font-bold text-lg mr-2">
                   {fb.name ? fb.name[0].toUpperCase() : "A"}
                 </div>
                 <h3 className="text-xl font-semibold text-white">
-                  {fb.name
-                    ? fb.name.length > 6
-                      ? `${fb.name.slice(0, 6)}...`
-                      : fb.name
-                    : "Anonymous"}
+                  {fb.name || "Anonymous"}
                 </h3>
               </div>
 
-              {/* Message */}
-              <p className="text-sm text-gray-300 mb-4 line-clamp-3 break-words overflow-hidden">
+              {/* Full Message */}
+              <p className="text-sm text-gray-300 mb-4 break-words whitespace-pre-wrap">
                 {fb.message}
               </p>
 
@@ -123,7 +117,8 @@ const AdminFeedback = () => {
           ))}
         </div>
       </div>
-      {/* Floating animation keyframes and shiny card animation */}
+
+      {/* Animation Styles */}
       <style>
         {`
           @keyframes float {
