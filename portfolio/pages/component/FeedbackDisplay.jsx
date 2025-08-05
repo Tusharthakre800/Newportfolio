@@ -65,7 +65,7 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
 
             <button
               onClick={() => handleLike(fb._id)}
-              className="text-white hover:scale-110 transition-transform absolute bottom-2 left-1/2 transform -translate-x-1/2"
+              className="text-white hover:scale-110 transition-transform absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer"
             >
               <span className={`inline-block text-xl ${likeAnimating[fb._id] ? "animate-like" : ""}`}>
                 👍
