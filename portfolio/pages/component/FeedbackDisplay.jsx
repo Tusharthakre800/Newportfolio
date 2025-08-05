@@ -5,15 +5,12 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
   const [likeAnimating, setLikeAnimating] = useState({});
   const [loadingFeedbacks, setLoadingFeedbacks] = useState(false);
 
-  useEffect(() => {
-    const loadFeedbacks = async () => {
-      setLoadingFeedbacks(true);
-      await fetchFeedbacks();
-      setLoadingFeedbacks(false);
-    };
+ 
 
-    loadFeedbacks();
-  }, [fetchFeedbacks]);
+  useEffect(() => {
+  setLoadingFeedbacks(false); // just to initialize
+}, []);
+
 
   const handleLike = async (id) => {
     setLikeAnimating((prev) => ({ ...prev, [id]: true }));
