@@ -29,7 +29,7 @@ const FeedbackDisplay = ({ feedbacks, fetchFeedbacks }) => {
   const skeletonArray = new Array(6).fill(0);
 
   return (
-    <div className="w-full h-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto">
+    <div className="w-full h-full overflow-y-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 max-w-6xl mx-auto">
       {loadingFeedbacks ? (
         skeletonArray.map((_, idx) => (
           <div

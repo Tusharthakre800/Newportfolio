@@ -15,6 +15,7 @@ async function seed() {
     { username, passwordHash: hash },
     { upsert: true, new: true }
   );
+  
 
   console.log("Admin seeded");
   process.exit(0);
