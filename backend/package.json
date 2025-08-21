@@ -7,7 +7,6 @@
     "dev": "nodemon server.js",
     "build": "echo 'No build step required for node.js backend'"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
