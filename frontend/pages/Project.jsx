@@ -59,6 +59,12 @@ on a laptop.`,
     tech: ["React", "express" , "tailwindcss" , "mongodb","GSAP" , "Node.js", "Socket.io"],
     link: "https://realtime-collab-platform.vercel.app/"
   },
+ {
+  "title": "Uber Clone - Real-time Ride Sharing Platform",
+  "description": "Full-stack Uber clone with real-time ride booking, live GPS tracking, captain registration, secure authentication, and scalable backend architecture. Features instant driver matching, live location updates, payment processing, and Socket.io real-time communication for seamless ride experience.",
+  "tech": ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "GSAP", "JWT", "Google Maps API", "Tailwind CSS", "PM2", ],
+  "link": "https://uber-six-bice.vercel.app/"
+}
 ];
 
 // Animated Projects Page
