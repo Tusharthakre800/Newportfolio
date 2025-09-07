@@ -92,7 +92,7 @@ const Projects = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: card,
-          start: "top 50%",
+          start: "top 80%",
           end: "bottom 50%",
           scrub: 2,
           yoyo: true,
