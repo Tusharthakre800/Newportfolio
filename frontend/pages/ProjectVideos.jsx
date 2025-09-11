@@ -39,7 +39,7 @@ const projectVideos = [
   {
     title: "Uber Clone - Real-time Ride Sharing Platform",
     video: "./videos/uberproject.mp4",
-    thumbnail: "./img/uberproject.png",
+    thumbnail: "./img/Uber2.0.png",
   },
 ];
 
