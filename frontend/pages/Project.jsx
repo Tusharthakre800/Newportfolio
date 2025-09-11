@@ -114,7 +114,7 @@ const Projects = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-14 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 drop-shadow-lg">
           My Projects
         </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
           {projectsData.map((project, index) => (
             <div
               key={index}
